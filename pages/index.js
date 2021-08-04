@@ -15,11 +15,6 @@ export default function Home() {
   const [tasks, setTasks] = useState([])
   const [loading, setloading] = useState(false) 
   
-  if(authReq()){
-    return(
-      <div>Login to see your to-do</div>
-    )
-  }
   
 
   function getTasks() {
@@ -39,6 +34,13 @@ export default function Home() {
   useEffect(() => {
     getTasks()
   }, [])
+
+  if(authReq()){
+    return(
+      <div>Login to see your to-do</div>
+    )
+  }
+  
 
   return (
     <div>
