@@ -8,7 +8,6 @@ import no_auth from "../middlewares/no_auth_required";
 
 
 export default function RegisterForm() {
-  no_auth()
   const { setToken } = useAuth()
   const [username, setusername] = useState('')
   const [password, setpassword] = useState('')

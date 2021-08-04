@@ -15,6 +15,5 @@ export default function no_auth() {
         return(
             <ToastContainer position="top-right"/>
         )
-        router.push('/')
     }
 }

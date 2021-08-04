@@ -10,10 +10,6 @@ export default function Register() {
 
   const { setToken } = useAuth()
   const router = useRouter()
-  // if(No_auth_required){
-  //   toast('Already logged in')
-  //   router.push('/')
-  // }
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')

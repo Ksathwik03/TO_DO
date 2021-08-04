@@ -32,15 +32,13 @@ export default function Home() {
   }
   
   useEffect(() => {
+    if(!token){
+      router.push('/login')
+    }
     getTasks()
   }, [])
 
-  if(authReq()){
-    return(
-      <div>Login to see your to-do</div>
-    )
-  }
-  
+ 
 
   return (
     <div>

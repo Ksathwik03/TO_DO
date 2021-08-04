@@ -10,12 +10,6 @@ export default function AddTask(props) {
   const {token} = useAuth()
 
   const addTask = () => {
-    /**
-     * @todo Complete this function.
-     * @todo 1. Send the request to add the task to the backend server.
-     * @todo 2. Add the task in the dom.
-     * 
-     */
     
     if(task == ''){
       return toast('Please enter a valid task')
