@@ -42,12 +42,12 @@ export default function TodoListItem(task) {
   }
   var tasks = task.task
   return (
-    <>
+    <div key = {tasks.id}>
       <li className='border flex border-gray-500 rounded px-2 py-2 justify-between items-center mb-2'> 
       
-      <div id={`done-button-${tasks.id}`} className= {editing? 'dont hide':'hideme'}>
+      <div id={`done-button-${tasks.id}`}  key = {`done-button-${tasks.id}`}  className= {editing? 'dont hide':'hideme'}>
       <input
-          id={`input-button-${tasks.id}`}
+          id={`input-button-${tasks.id}`} key = {`input-button-${tasks.id}`}
           type='text'
           value={temp}
           className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring  todo-edit-task-input'
@@ -62,10 +62,10 @@ export default function TodoListItem(task) {
             Done
           </button>
         </div>
-        <div id={`task-${tasks.id}`} className= {editing? 'hideme': 'todo-task  text-gray-600'}>
+        <div id={`task-${tasks.id}`} key={`task-${tasks.id}`}  className= {editing? 'hideme': 'todo-task  text-gray-600'}>
           {tasks.title}
         </div>
-        <span id={`task-actions-${tasks.id}`} className=''>
+        <span id={`task-actions-${tasks.id}`} key={`task-actions-${tasks.id}`} className=''>
           <button
             style={{ marginRight: '5px' }}
             type='button'
@@ -93,6 +93,6 @@ export default function TodoListItem(task) {
           </button>
         </span>
       </li>
-    </>
+    </div>
   )
 }
