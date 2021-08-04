@@ -15,7 +15,11 @@ export default function Home() {
   const [tasks, setTasks] = useState([])
   const [loading, setloading] = useState(false) 
   
-  authReq()
+  if(authReq()){
+    return(
+      <div>Login to see your to-do</div>
+    )
+  }
   
 
   function getTasks() {
@@ -44,9 +48,12 @@ export default function Home() {
           <span className='inline-block bg-blue-600 py-1 mb-2 px-9 text-sm text-white font-bold rounded-full '>
             Available Tasks
           </span>
-          {tasks.map(task =>  <TodoListItem task={task}
+          {tasks.map(task => 
+          <div key = {task.id}>
+           <TodoListItem task={task}
            getTasks = {getTasks}
-           id = {task.id}/>)}
+           id = {task.id}/>
+           </div>)}
         </ul>
       </center>
     </div>
